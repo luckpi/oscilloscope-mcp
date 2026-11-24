@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oscilloscope-mcp"
+version = "0.1.0"
+description = "可扩展的示波器 stdio MCP 服务（当前支持 Keysight DSO-X 2024A）"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.26,<2", "pyvisa>=1.14,<2"]
+
+[project.scripts]
+oscilloscope-mcp = "oscilloscope_mcp.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
